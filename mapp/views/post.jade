@@ -1,0 +1,15 @@
+//- post.jade
+doctype html
+html
+  include ./includes/head.jade
+  body
+  form(method='post')
+    label(for='title') 标题：
+    br
+    input(type='text', name='title')
+    br
+    label(for='content') 正文：
+    textarea(name='post', rows='20', cols='100')
+    br
+    input(type='submit', value='提交')
+  include ./includes/foot.jade

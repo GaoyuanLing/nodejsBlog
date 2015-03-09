@@ -1,0 +1,14 @@
+//- index.jade
+doctype html
+html
+  include ./includes/head.jade
+  body
+    form(method='post', action='/upload', enctype='multipart/form-data')
+      input(type='file', name='file1')
+      input(type='file', name='file2')
+      input(type='file', name='file3')
+      input(type='file', name='file4')
+      input(type='file', name='file5')
+      input(type='file', name='file6')
+      input(type='submit')
+  include ./includes/foot.jade

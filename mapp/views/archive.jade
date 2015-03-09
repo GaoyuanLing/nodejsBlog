@@ -1,0 +1,14 @@
+//- archive.jade
+doctype html
+html
+  include ./includes/head.jade
+  each post in posts
+    | #{post.time.day}
+    br
+    hr
+    a(href='/u/#{post.name}/#{post.title}/#{post.time.day}') #{post.title}
+    br
+    a(href='/u/#{post.name}') #{post.name}
+    br
+  
+  include ./includes/foot.jade

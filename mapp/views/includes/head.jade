@@ -1,0 +1,33 @@
+//- includes/head.jade
+head
+  title= title
+  script(src='/javascript/jquery.js')
+  script(src='/javascript/jquery.js')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+
+header
+  h1= title
+    
+nav
+  span
+    a(href='/', title='主页') HOME
+  if user == null
+    span
+      a(href='/login', title='登陆') LOGIN
+    span
+      a(href='/reg', title='注册') REGIST
+  else
+    span
+      a(href='/upload', title='上传') UPLOAD
+    span
+      a(href='/post', title='发表') POST
+    span
+      a(href='/archive', title='文档') ARCHIVE
+    span
+      a(href='/logout', title='登出') LOGOUT
+article
+  if success
+      div= success
+  if error
+      div= error
+    

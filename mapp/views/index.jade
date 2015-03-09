@@ -1,0 +1,18 @@
+//- index.jade
+doctype html
+html
+  include ./includes/head.jade
+  body
+  if user
+    p Welcome to #{title}
+  each post in posts
+    p
+      h2 
+        a(href='/u/#{post.name}/#{post.title}/#{post.time.day}')= post.title
+    p(class= 'info') 作者：
+      a(href='/u/#{post.name}')= post.name
+      |     | 日期：
+      a(href='#')= post.time.miniute
+    p!= post.post
+  include ./page.jade
+  include ./includes/foot.jade

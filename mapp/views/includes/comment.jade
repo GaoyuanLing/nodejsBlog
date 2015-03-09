@@ -1,0 +1,42 @@
+//- includes/commit.jade
+
+#comment
+br
+br
+br
+br
+br
+hr
+each comment in comments
+  p
+    a(href='#{comment.website}') #{comment.name}
+    span(class='info') 回复于 #{comment.time}
+  | !{comment.content}
+  br
+  br
+  hr
+
+form(method='post')
+ if user
+   label(for='name') 姓名
+   input(type='text', name='name', value='#{user.name}')
+   br
+   label(for='email') 邮箱
+   input(type='text', name='email', value='#{user.email}')
+   br
+   label(for='website') 网址
+   input(type='text', name='website', value='/u/#{user.name}')
+   br
+ else
+   label(for='name') 姓名
+   input(type='text', name='name')
+   br
+   label(for='email') 邮箱
+   input(type='text', name='email')
+   br
+   label(for='website') 网址
+   input(type='text', name='website')
+   br
+ textarea(name='content', rows='5', cols='80')
+ br
+ input(type='submit', value='留言')
